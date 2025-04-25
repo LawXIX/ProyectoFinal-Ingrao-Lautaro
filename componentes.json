@@ -1,0 +1,63 @@
+[
+    {
+      "nombre": "Logitech G Pro X",
+      "tipo": "Auriculares",
+      "marca": "Logitech",
+      "precio": 120
+    },
+    {
+      "nombre": "Razer DeathAdder V2",
+      "tipo": "Mouse",
+      "marca": "Razer",
+      "precio": 70
+    },
+    {
+      "nombre": "SteelSeries Apex Pro",
+      "tipo": "Teclado",
+      "marca": "SteelSeries",
+      "precio": 200
+    },
+    {
+      "nombre": "Corsair HS60 Pro",
+      "tipo": "Auriculares",
+      "marca": "Corsair",
+      "precio": 90
+    },
+    {
+      "nombre": "BenQ Zowie XL2546K",
+      "tipo": "Monitor",
+      "marca": "BenQ",
+      "precio": 300
+    },
+    {
+      "nombre": "HyperX Alloy Origins",
+      "tipo": "Teclado",
+      "marca": "HyperX",
+      "precio": 110
+    },
+    {
+      "nombre": "Logitech MX Master 3S",
+      "tipo": "Mouse",
+      "marca": "Logitech",
+      "precio": 99
+    },
+    {
+      "nombre": "ASUS ROG Strix XG27AQ",
+      "tipo": "Monitor",
+      "marca": "ASUS",
+      "precio": 450
+    },
+    {
+      "nombre": "Redragon M808 Storm",
+      "tipo": "Mouse",
+      "marca": "Redragon",
+      "precio": 35
+    },
+    {
+      "nombre": "Razer BlackShark V2",
+      "tipo": "Auriculares",
+      "marca": "Razer",
+      "precio": 99
+      
+    }
+  ]
