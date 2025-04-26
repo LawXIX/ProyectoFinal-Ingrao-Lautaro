@@ -1,23 +1,12 @@
+fetch('./componentes.json')
+.then(res => res.json())
+.then(productos => {
+    mostrarProductos(productos);
+    mostrarCarrito();
+})
+.catch(err => console.error('Error al cargar productos:', err));
 
-function Producto(nombre, marca, precio) {
-    this.nombre = nombre;  
-    this.marca = marca;  
-    this.precio = precio;  
-}
-
-
-const producto1 = new Producto("Placa de video", "Asus", 350);
-const producto2 = new Producto("Mother", "Asus", 250);
-const producto3 = new Producto("Memorias Ram", "XPG", 90);
-const producto4 = new Producto("MicroProcesador", "Ryzen 5", 300);
-const producto5 = new Producto("Almacenamiento", "SSD 200Gb", 80);
-const producto6 = new Producto("Gabinete", "Corsair", 50);
-
-
-const productos = [producto1, producto2, producto3, producto4, producto5, producto6];
-
-
-function mostrarProductos() {
+function mostrarProductos(productos) {
     const container = document.getElementById("productos-container");
 
     productos.forEach((producto) => {
