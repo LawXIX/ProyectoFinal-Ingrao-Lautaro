@@ -1,4 +1,4 @@
-fetch('./componentes.json')
+fetch('./perifericos.json')
 .then(res => res.json())
 .then(productos => {
     mostrarProductos(productos);
@@ -60,12 +60,6 @@ document.getElementById("vaciar-carrito-btn").addEventListener("click", () => {
     mostrarCarrito();
 });
 
-// function calcularTotal() {
-//     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-//     const total = carrito.reduce((sum, producto) => sum + producto.precio, 0);
-//     document.getElementById('total').textContent = 'Total: $' + total;
-// }
-
 
 let currentTheme = localStorage.getItem("theme");
 
@@ -93,4 +87,4 @@ toggleThemeBtn.addEventListener("click", () => {
 
     mostrarProductos();
     mostrarCarrito();
-    //calcularTotal();
+  
