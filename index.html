@@ -9,31 +9,29 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <div class="wrapper">
         <aside>
             <header>
                 <img class="logo" src="./img/Byte-me.png" alt="">
-                <!-- <h1 class="logo"></h1> -->
             </header>
             <nav>
-                <ul>
+                <ul class="menu">
                     <li>
-                        <button class="boton-menu boton-categoria active">Todos los perifericos</button>
+                        <button id="todos" class="boton-menu boton-categoria active">Todos los perifericos</button>
                     </li>
                     <li>
-                        <button class="boton-menu boton-categoria ">Mouse</button>
+                        <button id="mouses" class="boton-menu boton-categoria">Mouses</button>
                     </li>
                     <li>
-                        <button class="boton-menu boton-categoria ">Auriculares</button>
+                        <button id="auriculares" class="boton-menu boton-categoria">Auriculares</button>
                     </li>
                     <li>
-                        <button class="boton-menu boton-categoria ">Teclados</button>
+                        <button id="teclados" class="boton-menu boton-categoria">Teclados</button>
                     </li>
                     <li>
-                        <button class="boton-menu boton-categoria ">Monitores</button>
+                        <button id="monitores" class="boton-menu boton-categoria">Monitores</button>
                     </li>
                     <li>
                         <a class="boton-menu boton-carrito" href="./carrito.html">
@@ -47,36 +45,12 @@
             </footer>
         </aside>
         <main>
-            <h2 class="titulo-principal">Todos los productos</h2>
-            <div class="contenedor-productos">
-                <div class="producto">
-                    <img class="producto-imagen" src="./img/aricular1.png" alt="">
-                </div class="producto-detalles">
-                <h3 class="producto-titulo">Auricular 1</h3>
-                <p class="producto-precio">200</p>
-                <button class="producto-agregar">Agregar</button>
+            <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
+            <div id="contenedor-productos" class="contenedor-productos">
             </div>
-            <div class="producto">
-                <img class="producto-imagen" src="./img/aricular2.png" alt="">
-            </div class="producto-detalles">
-            <h3 class="producto-titulo">Auricular 2</h3>
-            <p class="producto-precio">200</p>
-            <button class="producto-agregar">Agregar</button>
+        </main>
     </div>
-    <div class="producto">
-        <img class="producto-imagen" src="./img/teclado1.jpg" alt="">
-    </div class="producto-detalles">
-    <h3 class="producto-titulo">Teclado 1</h3>
-    <p class="producto-precio">200</p>
-    <button class="producto-agregar">Agregar</button>
-    </div>
-    <div class="producto">
-        <img class="producto-imagen" src="./img/teclado2.jpg" alt="">
-    </div class="producto-detalles">
-    <h3 class="producto-titulo">Teclado 2</h3>
-    <p class="producto-precio">200</p>
-    <button class="producto-agregar">Agregar</button>
-    </div>
+
 
     <script src="main.js"></script>
 </body>

@@ -1,90 +1,105 @@
 fetch('./perifericos.json')
-.then(res => res.json())
-.then(productos => {
-    mostrarProductos(productos);
-    mostrarCarrito();
-})
-.catch(err => console.error('Error al cargar productos:', err));
+    .then(res => res.json())
+    .then(data => {
+        perifericos = data;
+        cargarProductos(perifericos);
+        mostrarCarrito();
+    })
+    .catch(err => console.error('Error al cargar productos:', err));
 
-function mostrarProductos(productos) {
-    const container = document.getElementById("productos-container");
+const contenedorProductos = document.querySelector("#contenedor-productos");
+const botonesCategorias = document.querySelectorAll(".boton-categoria");
+const tituloPrincipal = document.querySelector("#titulo-principal");
+let botonesAgregar = document.querySelectorAll(".producto-agregar");
+const numerito = document.querySelector("#numerito");
 
-    productos.forEach((producto) => {
-        const productoDiv = document.createElement("div");
-        productoDiv.classList.add("producto");
 
-        productoDiv.innerHTML = `
-            <h3>${producto.nombre}</h3>
-            <p>Marca: ${producto.marca}</p>
-            <p>Precio: $${producto.precio}</p>
-            <button class="agregar-carrito-btn" data-nombre="${producto.nombre}" data-tamaño="${producto.marca}" data-precio="${producto.precio}">Agregar al Carrito</button>`;
-
-        container.appendChild(productoDiv);
+function cargarProductos(perifericos) {
+    contenedorProductos.innerHTML = "";
+    perifericos.forEach(producto => {
+        const div = document.createElement("div");
+        div.classList.add("producto");
+        div.innerHTML = `
+        <img class="producto-imagen" src="${producto.imagen}" alt="${producto.nombre}">
+        <div class="producto-detalles">
+            <h3 class="producto-titulo">${producto.nombre}</h3>
+            <p class="producto-marca">${producto.marca}</p>
+            <p class="producto-precio">$${producto.precio}</p>
+            <button class="producto-agregar" id="${producto.id}">Agregar</button>
+        </div>
+      `;
+        contenedorProductos.append(div);
     });
+
+    actualizarBotonesAgregar();
+
 }
 
 
-function agregarAlCarrito(nombre, tamaño, precio) {
-    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    const producto = { nombre, tamaño, precio };
+botonesCategorias.forEach(boton => {
+    boton.addEventListener("click", (e) => {
+        botonesCategorias.forEach(boton => boton.classList.remove("active"));
+        e.currentTarget.classList.add("active");
 
-    carrito.push(producto);
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    mostrarCarrito();
+        if (e.currentTarget.id != 'todos') {
+            const productoCategoria = perifericos.find(producto => producto.categoria.id === e.currentTarget.id);
+            tituloPrincipal.innerText = productoCategoria.categoria.tipo;
+
+            const productosBoton = perifericos.filter(producto => producto.categoria.id === e.currentTarget.id);
+            cargarProductos(productosBoton);
+        } else {
+            tituloPrincipal.innerText = "Todos los Productos";
+            cargarProductos(perifericos);
+        }
+
+
+    });
+});
+
+function actualizarBotonesAgregar() {
+    botonesAgregar = document.querySelectorAll(".producto-agregar");
+
+    botonesAgregar.forEach(boton => {
+        boton.addEventListener("click", agregarAlCarrito);
+    })
 }
+
+let productosEnCarrito;
+let productosEnCarritoLocalStorage = localStorage.getItem("productos-en-carrito");
+
+
+if (productosEnCarritoLocalStorage) {
+    productosEnCarrito = JSON.parse(productosEnCarritoLocalStorage);
+    
+} else {
+    productosEnCarrito = [];
+}
+
+
+function agregarAlCarrito(e) {
+    const idBoton = e.currentTarget.id;
+    const productoAgregado = perifericos.find(producto => producto.id === idBoton);
+
+    if (productosEnCarrito.some(producto => producto.id === idBoton)) {
+        const index = productosEnCarrito.findIndex(producto => producto.id === idBoton)
+        productosEnCarrito[index].cantidad++;
+
+    } else {
+        productoAgregado.cantidad = 1;
+        productosEnCarrito.push(productoAgregado);
+    }
+    actualizarNumerito();
+
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+}
+
+function actualizarNumerito() {
+    let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+    numerito.innerText = nuevoNumerito;
+}
+
 
 
 function mostrarCarrito() {
-    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-    const carritoLista = document.getElementById("carrito-lista");
 
-    carritoLista.innerHTML = "";  
-
-    carrito.forEach((producto) => {
-        const li = document.createElement("li");
-        li.textContent = `${producto.nombre} - ${producto.tamaño} - $${producto.precio}`;
-        carritoLista.appendChild(li);
-    });
 }
-
-
-document.getElementById("productos-container").addEventListener("click", (event) => {
-    if (event.target.classList.contains("agregar-carrito-btn")) {
-        const { nombre, tamaño, precio } = event.target.dataset;
-        agregarAlCarrito(nombre, tamaño, precio);
-    }
-});
-
-document.getElementById("vaciar-carrito-btn").addEventListener("click", () => {
-    localStorage.removeItem("carrito");
-    mostrarCarrito();
-});
-
-
-let currentTheme = localStorage.getItem("theme");
-
-if (currentTheme === "oscuro") {
-    document.body.style.backgroundColor = "#333";
- } else {
-    document.body.style.backgroundColor = "#f0f0f0";
-}
-
-
-const toggleThemeBtn = document.getElementById("toggle-theme-btn");
-toggleThemeBtn.addEventListener("click", () => {
-    let currentTheme = localStorage.getItem("theme");
-
-    if (currentTheme === "oscuro") {
-       
-        localStorage.setItem("theme", "claro");
-        document.body.style.backgroundColor = "#f0f0f0";
-        } else {
-        
-        localStorage.setItem("theme", "oscuro");
-        document.body.style.backgroundColor = "#333";
-    }
-});
-
-    mostrarProductos();
-    mostrarCarrito();
-  

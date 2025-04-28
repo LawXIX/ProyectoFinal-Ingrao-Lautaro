@@ -16,12 +16,11 @@
         <aside>
             <header>
                 <img class="logo" src="./img/Byte-me.png" alt="">
-                <!-- <h1 class="logo">ByteMe</h1> -->
             </header>
             <nav>
                 <ul>
                     <li>
-                        <a class="boton-volver" href="./index.html">
+                        <a class="boton-menu boton-volver" href="./index.html">
                             <i class="bi bi-arrow-left"></i>Seguir Comprando
                         </a>
                     </li>
@@ -39,71 +38,30 @@
         <main>
             <h2 class="titulo-principal">Carrito</h2>
             <div class="contenedor-carrito">
-                <p class="carrito-vacio">Agregá para ver aca tus Productos</p>
-                <div class="carrito-productos">
-                    <div class="carrito-producto">
-                        <img src="./img/aricular1.png" alt="">
-                        <div class="carrito-producto-titulo">
-                            <small>Título</small>
-                            <h3>Auricular1</h3>
-                        </div>
-                        <div class="carrito-producto-cantidad">
-                            <small>Cantidad</small>
-                            <p>1</p>
-                        </div>
-                        <div class="carrito-producto-precio">
-                            <small>Precio</small>
-                            <p>$200</p>
-                        </div>
-                        <div class="carrito-producto-subtotal">
-                            <small>Subtotal</small>
-                            <p>$200</p>
-                        </div>
-                        <button class="carrito-producto-eliminar"><i class="bi bi-trash-fill"></i></button>
+                <p id="carrito-vacio" class="carrito-vacio">Agregá para ver aca tus Productos</p>
 
-                    </div>
-                    <div class="carrito-producto">
-                        <img src="./img/aricular2.png" alt="">
-                        <div class="carrito-producto-titulo">
-                            <small>Título</small>
-                            <h3>Auricular2</h3>
-                        </div>
-                        <div class="carrito-producto-cantidad">
-                            <small>Cantidad</small>
-                            <p>2</p>
-                        </div>
-                        <div class="carrito-producto-precio">
-                            <small>Precio</small>
-                            <p>$200</p>
-                        </div>
-                        <div class="carrito-producto-subtotal">
-                            <small>Subtotal</small>
-                            <p>$400</p>
-                        </div>
-                        <button class="carrito-producto-eliminar"><i class="bi bi-trash-fill"></i></button>
-
-                    </div>
+                <div id="carrito-productos" class="carrito-productos disabled">
                 </div>
-                <div class="carrito-acciones">
+
+                <div id="carrito-acciones" class="carrito-acciones disabled">
                     <div class="carrito-acciones-izquierda">
-                        <button class="carrito-acciones-vaciar">Vaciar Carrito</button>
+                        <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar Carrito</button>
                     </div>
-
-                    <div class="carrito-acciones">
-                        <div class="carrito-acciones-derecha">
-                            <div class="acciones-carrito-total">
-                                <p>Total:</p>
-                                <p id="total">$400</p>
-                            </div>
-                            <button class="carrito-acciones-comprar">Comprar Ahora</button>
+                    <div class="carrito-acciones-derecha">
+                        <div class="carrito-acciones-total">
+                            <p>Total:</p>
+                            <p id="total">$400</p>
                         </div>
+                        <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar Ahora</button>
                     </div>
-
                 </div>
+</div>
+                <p id="carrito-comprado" class="carrito-comprado disabled">Muchas Gracias, vuelva prontos!! </p>
+            </div>
         </main>
     </div>
 
-
+    <script src="carrito.js"></script>
 </body>
 
 </html>

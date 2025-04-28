@@ -1,64 +1,112 @@
 [
 
     {
+      "id": "Auricular2",
       "nombre": "Logitech G Pro X",
+      "imagen": "./img/auricular2.jpg",
       "tipo": "Auriculares",
       "marca": "Logitech",
-      "precio": 120
+      "precio": 120,
+      "categoria": {
+          "tipo":"Auriculares",
+          "id":"auriculares"
+      }
     },
     {
+      "id": "Mouse2",
       "nombre": "Razer DeathAdder V2",
+      "imagen": "./img/mouse2.jpg",
       "tipo": "Mouse",
       "marca": "Razer",
-      "precio": 70
+      "precio": 70,
+      "categoria": {
+          "tipo":"Mouses",
+          "id":"mouses"
+      }
     },
     {
+      "id": "Teclado2",
       "nombre": "SteelSeries Apex Pro",
+      "imagen": "./img/teclado2.jpg",
       "tipo": "Teclado",
       "marca": "SteelSeries",
-      "precio": 200
+      "precio": 200,
+      "categoria": {
+          "tipo":"Teclados",
+          "id":"teclados"
+      }
     },
     {
+      "id": "Auricular1",
       "nombre": "Corsair HS60 Pro",
+      "imagen": "./img/auricular1.jpg",
       "tipo": "Auriculares",
       "marca": "Corsair",
-      "precio": 90
+      "precio": 90,
+      "categoria": {
+          "tipo":"Auriculares",
+          "id":"auriculares"
+      }
+      
     },
     {
+      "id": "Monitor2",
       "nombre": "BenQ Zowie XL2546K",
       "tipo": "Monitor",
+      "imagen": "./img/monitor2.jpg",
       "marca": "BenQ",
-      "precio": 300
+      "precio": 300,
+      "categoria": {
+          "tipo":"Monitores",
+          "id":"monitores"
+      }
     },
     {
+      "id": "Teclado1",
       "nombre": "HyperX Alloy Origins",
       "tipo": "Teclado",
+      "imagen": "./img/teclado1.jpg",
       "marca": "HyperX",
-      "precio": 110
+      "precio": 110,
+      "categoria": {
+          "tipo":"Teclados",
+          "id":"teclados"
+      }
     },
     {
-      "nombre": "Logitech MX Master 3S",
-      "tipo": "Mouse",
-      "marca": "Logitech",
-      "precio": 99
-    },
-    {
+      "id": "Monitor1",
       "nombre": "ASUS ROG Strix XG27AQ",
+      "imagen": "./img/monitor1.jpg",
       "tipo": "Monitor",
       "marca": "ASUS",
-      "precio": 450
+      "precio": 450,
+      "categoria": {
+          "tipo":"Monitores",
+          "id":"monitores"
+      }
     },
     {
+      "id": "Mouse1",
       "nombre": "Redragon M808 Storm",
+      "imagen": "./img/mouse1.jpg",
       "tipo": "Mouse",
       "marca": "Redragon",
-      "precio": 35
+      "precio": 35,
+      "categoria": {
+          "tipo":"Mouses",
+          "id":"mouses"
+      }
     },
     {
+      "id": "Auricular3",
       "nombre": "Razer BlackShark V2",
+      "imagen": "./img/auricular3.jpg",
       "tipo": "Auriculares",
       "marca": "Razer",
-      "precio": 99
-      
+      "precio": 99,
+      "categoria": {
+          "tipo":"Auriculares",
+          "id":"auriculares"
+      }
     }
   ]
